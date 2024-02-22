@@ -1,0 +1,156 @@
+:root {
+  --moderate-blue: hsl(238, 40%, 52%);
+  --soft-red: hsl(358, 79%, 66%);
+  --light-gray-blue: hsl(239, 57%, 85%);
+  --pale-red: hsl(357, 100%, 86%);
+  --dark-blue: hsl(212, 24$, 26%);
+  --gray-blue: hsl(211, 10%, 45%);
+  --light-gray: hsl(223, 19%, 93%);
+  --very-light-gray: hsl(228, 33%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  background-color: var(--very-light-gray);
+}
+
+button {
+  /* Reset all default styles */
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+  /* Remove default styles in modern browsers */
+  cursor: pointer;
+  /* Ensure cursor changes to pointer on hover */
+}
+
+.container {
+  background-color: var(--very-light-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  background-color: var(--white);
+  border-radius: 12px;
+  margin: 16px;
+  padding: 16px;
+  width: 350px;
+}
+
+.card__top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.card__name {
+  font-weight: 500;
+  color: var(--dark-blue);
+}
+
+.card__date {
+  font-weight: 400;
+  color: var(--gray-blue)
+}
+
+.card__pic {
+  height: 24px;
+  border-radius: 50%;
+}
+
+.card__counter {
+  display: inline-flex;
+  background-color: var(--light-gray);
+  gap: 12px;
+  border-radius: 12px;
+  align-items: center;
+  font-weight: 500;
+  color: var(--moderate-blue);
+}
+
+.card__reply {
+  margin-left: auto;
+  font-weight: 500;
+  color: var(--moderate-blue);
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+}
+
+.counter__btn {
+  padding: 8px;
+}
+
+.btn--down {
+  transform: translateY(-10%);
+}
+
+.card__content {
+  margin: 16px 0;
+  color: var(--gray-blue)
+}
+
+.card.card--reply {
+  width: 330px;
+  position: relative;
+  left: 10px;
+}
+
+.reply__container {
+  position: relative;
+}
+
+.vr {
+  border-left: 2px solid var(--light-gray);
+  margin: 0 auto;
+  position: absolute;
+  top: 16px;
+  height: calc(100% - 32px);
+}
+
+/* Tablet-sized devices */
+@media screen and (min-width: 768px) {
+
+  .card {
+    width: 550px;
+    padding-left: 96px;
+    min-height: 150px;
+  }
+
+  .card__reply {
+    bottom: auto;
+    top: 20px;
+  }
+
+  .card__counter {
+    flex-direction: column;
+    padding: 0 8px;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+  }
+
+  .card.card--reply {
+    width: 500px;
+    position: relative;
+    left: 25px;
+  }
+}
